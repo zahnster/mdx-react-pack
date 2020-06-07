@@ -1,0 +1,24 @@
+{
+  "name": "docs-pack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "react": "^16.13.1",
+    "rollup": "^2.13.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-mdx": "^0.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1"
+  }
+}
