@@ -8,7 +8,7 @@ This project utilizes the [Rollup bundler](http://rollupjs.org/) to build React 
 
 This is to provide for a streamlined way to take components and docs from one project (say, a design system), and render them in a completely different app (say, a website).
 
-We are using Rollup as it is better suited for bundling and distributing libraries than bundlers like Webpack. We have had struggles getting Webpack to work with external bundles (such as React, which we don't want to include with this dist), as well as having the flexibility to render both server and client-side.
+We are using Rollup as it is better suited for bundling and distributing libraries than bundlers like Webpack. We have had struggles getting Webpack to work with external packages efficiently. Webpack also has a [limitation with SSR](https://github.com/webpack/webpack/issues/6784), and SSR is critical to our needs.
 
 ## Starting up and Running the Build
 
