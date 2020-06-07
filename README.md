@@ -10,6 +10,9 @@ This is to provide for a streamlined way to take components and docs from one pr
 
 We are using Rollup as it is better suited for bundling and distributing libraries than bundlers like Webpack. We have had struggles getting Webpack to work with external packages efficiently. Webpack also has a [limitation with SSR](https://github.com/webpack/webpack/issues/6784), and SSR is critical to our needs.
 
+Read more about the key differences between Webpack and Rollup, and why we chose Rollup for bundling our component library, here:
+https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c
+
 ## Starting up and Running the Build
 
 This project is intended to run with Node v12.
@@ -17,7 +20,3 @@ This project is intended to run with Node v12.
 1. Clone repository
 2. `npm install` to install
 3. `npm run build` will build the contents of `/components` and put their packed cjs files in `dist`
-
-## Limitations / Bugs
-
-- The Rollup MDX plugin won't import associated React components. As a result, we are bringing the component files along for the ride explicitly. It would be nice to not have to do this.
