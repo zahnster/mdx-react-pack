@@ -22,7 +22,12 @@ const componentFiles = {
     format: 'cjs'
   },
   external: ['react'],
-  plugins: [resolve(), babel()],
+  plugins: [
+    resolve({
+      extensions: ['.js', '.jsx']
+    }),
+    babel()
+  ],
   preserveModules: true
 }
 
