@@ -18,6 +18,7 @@
     "fast-glob": "^3.2.2",
     "react": "^16.13.1",
     "rollup": "^2.13.1",
+    "rollup-plugin-analyzer": "^3.2.3",
     "rollup-plugin-mdx": "^0.1.0"
   },
   "peerDependencies": {

@@ -2,6 +2,7 @@ import glob from 'fast-glob'
 import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import mdx from 'rollup-plugin-mdx'
+import analyze from 'rollup-plugin-analyzer'
 
 const docsConfig = {
   input: glob.sync('components/**/docs.mdx'),
@@ -10,7 +11,7 @@ const docsConfig = {
     format: 'cjs'
   },
   external: ['react', '@mdx-js/react'],
-  plugins: [mdx()],
+  plugins: [mdx(), analyze({ summaryOnly: true })],
   preserveModules: true
 }
 
@@ -25,7 +26,8 @@ const componentConfig = {
     resolve({
       extensions: ['.js', '.jsx']
     }),
-    babel()
+    babel(),
+    analyze({ summaryOnly: true })
   ],
   preserveModules: true
 }
