@@ -1,22 +1,21 @@
-import fs from 'fs'
+import glob from 'fast-glob'
 import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import mdx from 'rollup-plugin-mdx'
 
-const componentList = fs.readdirSync('./components')
-
-const componentDocs = componentList.map((name) => ({
-  input: `components/${name}/docs.mdx`,
+const docsConfig = {
+  input: glob.sync('components/**/docs.mdx'),
   output: {
-    file: `dist/${name}/docs.js`,
+    dir: 'dist',
     format: 'cjs'
   },
   external: ['react', '@mdx-js/react'],
-  plugins: [mdx()]
-}))
+  plugins: [mdx()],
+  preserveModules: true
+}
 
-const componentFiles = {
-  input: componentList.map((name) => `components/${name}/index.js`),
+const componentConfig = {
+  input: glob.sync('components/**/*.{js,jsx}'),
   output: {
     dir: 'dist',
     format: 'cjs'
@@ -31,4 +30,4 @@ const componentFiles = {
   preserveModules: true
 }
 
-export default componentDocs.concat(componentFiles)
+export default [docsConfig, componentConfig]
