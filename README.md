@@ -31,7 +31,10 @@ The quickest way to test the output is to place the contents of `dist`in a named
 import Button from `system/Button`
 import ButtonDocs from `system/Button/docs`
 
-<Button />
-
-<ButtonDocs />
+export default () => (
+    <>
+        <Button />
+        <ButtonDocs />
+    </>
+)
 ```
