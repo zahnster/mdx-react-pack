@@ -1,7 +1,7 @@
 import fs from 'fs'
-import babel from 'rollup-plugin-babel'
-import mdx from 'rollup-plugin-mdx'
+import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
+import mdx from 'rollup-plugin-mdx'
 
 const componentList = fs.readdirSync('./components')
 
@@ -11,7 +11,7 @@ const componentDocs = componentList.map((name) => ({
     file: `dist/${name}/docs.js`,
     format: 'cjs'
   },
-  external: ['react'],
+  external: ['react', '@mdx-js/react'],
   plugins: [mdx()]
 }))
 
