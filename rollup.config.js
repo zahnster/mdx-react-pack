@@ -3,6 +3,7 @@ import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import mdx from 'rollup-plugin-mdx'
 import analyze from 'rollup-plugin-analyzer'
+import { terser } from 'rollup-plugin-terser'
 
 const docsConfig = {
   input: glob.sync('components/**/docs.mdx'),
@@ -11,7 +12,7 @@ const docsConfig = {
     format: 'cjs'
   },
   external: ['react', '@mdx-js/react'],
-  plugins: [mdx(), analyze({ summaryOnly: true })],
+  plugins: [mdx(), terser(), analyze({ summaryOnly: true })],
   preserveModules: true
 }
 
@@ -27,6 +28,7 @@ const componentConfig = {
       extensions: ['.js', '.jsx']
     }),
     babel(),
+    terser(),
     analyze({ summaryOnly: true })
   ],
   preserveModules: true

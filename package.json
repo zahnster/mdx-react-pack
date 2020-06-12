@@ -19,7 +19,8 @@
     "react": "^16.13.1",
     "rollup": "^2.13.1",
     "rollup-plugin-analyzer": "^3.2.3",
-    "rollup-plugin-mdx": "^0.1.0"
+    "rollup-plugin-mdx": "^0.1.0",
+    "rollup-plugin-terser": "^6.1.0"
   },
   "peerDependencies": {
     "react": "^16.13.1"
