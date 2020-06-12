@@ -28,8 +28,8 @@ The quickest way to test the output is to place the contents of `dist`in a named
 ### Example consumption from `system` project
 
 ```
-import Button from `system/Button`
-import ButtonDocs from `system/Button/docs`
+import Button from 'system/Button'
+import ButtonDocs from 'system/Button/docs'
 
 export default () => (
     <>
